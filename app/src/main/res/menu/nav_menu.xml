@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_words"
+            android:icon="@drawable/ic_menu_words"
+            android:title="Words" />
+        <item
+            android:id="@+id/nav_flashcards"
+            android:icon="@drawable/ic_menu_words"
+            android:title="Flash Cards" />
+        <item
+            android:id="@+id/nav_bookmarks"
+            android:icon="@drawable/ic_menu_words"
+            android:title="Bookmarks" />
+    </group>
+</menu>

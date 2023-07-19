@@ -1,0 +1,25 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_words">
+
+    <fragment
+        android:id="@+id/nav_words"
+        android:name="com.example.frenchlearning.words.WordsFragment"
+        android:label="Words"
+        tools:layout="@layout/fragment_words" />
+
+    <fragment
+        android:id="@+id/nav_flashcards"
+        android:name="com.example.frenchlearning.FlashCardsFragment"
+        android:label="Flash Cards"
+        tools:layout="@layout/fragment_flash_cards" />
+
+    <fragment
+        android:id="@+id/nav_bookmarks"
+        android:name="com.example.frenchlearning.BookmarkFragment"
+        android:label="Bookmarks"
+        tools:layout="@layout/fragment_bookmark" />
+
+</navigation>
