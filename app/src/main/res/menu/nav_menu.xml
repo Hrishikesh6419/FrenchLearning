@@ -3,14 +3,18 @@
         <item
             android:id="@+id/nav_words"
             android:icon="@drawable/ic_menu_words"
-            android:title="Words" />
+            android:title="@string/words" />
+        <item
+            android:id="@+id/nav_frenchWords"
+            android:icon="@drawable/ic_menu_words"
+            android:title="@string/french_words" />
         <item
             android:id="@+id/nav_flashcards"
             android:icon="@drawable/ic_menu_words"
-            android:title="Flash Cards" />
+            android:title="@string/flash_cards" />
         <item
             android:id="@+id/nav_bookmarks"
             android:icon="@drawable/ic_menu_words"
-            android:title="Bookmarks" />
+            android:title="@string/bookmarks" />
     </group>
 </menu>

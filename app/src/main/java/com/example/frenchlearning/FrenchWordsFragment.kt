@@ -1,4 +1,4 @@
-package com.example.frenchlearning.words.view
+package com.example.frenchlearning
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.frenchlearning.R
 import com.example.frenchlearning.data.Word
 import com.example.frenchlearning.databinding.FragmentWordsBinding
 import com.example.frenchlearning.words.WordsViewModel
+import com.example.frenchlearning.words.view.WordsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WordsFragment : Fragment() {
+class FrenchWordsFragment : Fragment() {
 
     private val viewModel: WordsViewModel by viewModels()
 
@@ -48,8 +48,9 @@ class WordsFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        adapter = WordsAdapter(shouldShowFrench = false) { word: Word ->
-            val action = WordsFragmentDirections.actionNavWordsToWordDetailFragment(word)
+        adapter = WordsAdapter(shouldShowFrench = true) { word: Word ->
+            val action =
+                FrenchWordsFragmentDirections.actionNavFrenchWordsToWordDetailFragment(word)
             findNavController().navigate(action)
         }
         binding.viewWords.adapter = adapter
