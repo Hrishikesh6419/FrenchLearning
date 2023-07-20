@@ -44,31 +44,42 @@
         app:layout_constraintBottom_toBottomOf="@id/frenchWord"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/pronunciationHeading"
-        style="@style/TitleStyle"
-        android:text="@string/pronunciation_title"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutPronunciation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frenchWord" />
+        app:layout_constraintTop_toBottomOf="@id/frenchWord">
 
-    <TextView
-        android:id="@+id/pronunciation"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pronunciationHeading"
-        tools:text="bon-zhoor" />
+        <TextView
+            android:id="@+id/pronunciationHeading"
+            style="@style/TitleStyle"
+            android:drawablePadding="4dp"
+            android:text="@string/pronunciation_title"
+            app:drawableEndCompat="@drawable/ic_speaker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/pronunciation"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/pronunciation"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pronunciationHeading"
+            tools:text="bon-zhoor" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/pronunciation"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/relatedWordsHeading"
         style="@style/TitleStyle"
         android:text="@string/related_words_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pronunciation" />
+        app:layout_constraintTop_toBottomOf="@id/layoutPronunciation" />
 
     <TextView
         android:id="@+id/relatedWords"
