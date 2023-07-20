@@ -1,11 +1,15 @@
 package com.example.frenchlearning.words
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.frenchlearning.network.WordsRepository
+import com.example.frenchlearning.data.Word
+import com.example.frenchlearning.data.repository.WordsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -13,9 +17,21 @@ class WordsViewModel @Inject constructor(
     private val wordsRepository: WordsRepository
 ) : ViewModel() {
 
-    fun loadWords() {
+    private val _words = MutableLiveData<List<Word>>()
+    val words: LiveData<List<Word>> = _words
+
+    init {
+        loadWords()
+    }
+
+    private fun loadWords() {
         viewModelScope.launch(Dispatchers.IO) {
-            wordsRepository.fetchWords()
+            val wordsList = wordsRepository.fetchWords()
+            // The result of wordsRepository.fetchWords() is posted to
+            // the _words LiveData object on the main thread using withContext(Dispatchers.Main)
+            withContext(Dispatchers.Main) {
+                _words.value = wordsList
+            }
         }
     }
 }

@@ -13,5 +13,6 @@ data class Word(
 enum class Category {
     SIMPLE_WORDS,
     STATEMENT,
-    ALPHABET
+    ALPHABET,
+    UNKNOWN
 }

@@ -1,5 +1,6 @@
-package com.example.frenchlearning.network
+package com.example.frenchlearning.di
 
+import com.example.frenchlearning.network.WordsApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +15,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): WordsApi {
+    fun provideWordsApi(): WordsApi {
         return Retrofit.Builder()
             .baseUrl("https://docs.google.com/spreadsheets/")
             .addConverterFactory(GsonConverterFactory.create())
