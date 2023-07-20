@@ -13,4 +13,7 @@ interface WordsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertWords(words: List<WordEntity>)
+
+    @Query("DELETE FROM words")
+    suspend fun nukeTable()
 }
