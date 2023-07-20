@@ -70,8 +70,10 @@ class WordsRepository @Inject constructor(
                     }
 
                     // Save all WordEntities in the database
-                    wordsDao.nukeTable()
-                    wordsDao.insertWords(wordEntities)
+                    wordsDao.apply {
+                        nukeTable()
+                        insertWords(wordEntities)
+                    }
                 }
             }
 
