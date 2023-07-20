@@ -9,6 +9,7 @@
     <string name="pronunciation_title">Pronunciation</string>
     <string name="related_words_title">Related Words</string>
     <string name="explanation_title">Explanation</string>
+    <string name="comments_title">Comments</string>
     <string name="mnemonics_title">Mnemonics</string>
     <string name="category_title">Category</string>
     <string name="not_available">Not available</string>

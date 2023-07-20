@@ -1,153 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
     tools:context=".word_detail.view.WordDetailFragment">
 
-    <TextView
-        android:id="@+id/englishWordHeading"
-        style="@style/TitleStyle"
-        android:text="@string/english_word_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/englishWord"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/englishWordHeading"
-        tools:text="Good Morning or Hi" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/englishWord"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/frenchWordHeading"
-        style="@style/TitleStyle"
-        android:text="@string/french_word_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/englishWord" />
-
-    <TextView
-        android:id="@+id/frenchWord"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frenchWordHeading"
-        tools:text="Bonjour" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/frenchWord"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layoutPronunciation"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frenchWord">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/pronunciationHeading"
+            android:id="@+id/englishWordHeading"
             style="@style/TitleStyle"
-            android:drawablePadding="4dp"
-            android:text="@string/pronunciation_title"
-            app:drawableEndCompat="@drawable/ic_speaker"
+            android:text="@string/english_word_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/pronunciation"
+            android:id="@+id/englishWord"
             style="@style/SubtitleStyle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pronunciationHeading"
-            tools:text="bon-zhoor" />
+            app:layout_constraintTop_toBottomOf="@id/englishWordHeading"
+            tools:text="Good Morning or Hi" />
 
         <com.google.android.material.divider.MaterialDivider
             style="@style/DividerStyle"
-            app:layout_constraintBottom_toBottomOf="@id/pronunciation"
+            app:layout_constraintBottom_toBottomOf="@id/englishWord"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/frenchWordHeading"
+            style="@style/TitleStyle"
+            android:text="@string/french_word_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/englishWord" />
+
+        <TextView
+            android:id="@+id/frenchWord"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frenchWordHeading"
+            tools:text="Bonjour" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/frenchWord"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPronunciation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/frenchWord">
+
+            <TextView
+                android:id="@+id/pronunciationHeading"
+                style="@style/TitleStyle"
+                android:drawablePadding="4dp"
+                android:text="@string/pronunciation_title"
+                app:drawableEndCompat="@drawable/ic_speaker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pronunciation"
+                style="@style/SubtitleStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pronunciationHeading"
+                tools:text="bon-zhoor" />
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/DividerStyle"
+                app:layout_constraintBottom_toBottomOf="@id/pronunciation"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/relatedWordsHeading"
+            style="@style/TitleStyle"
+            android:text="@string/related_words_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutPronunciation" />
+
+        <TextView
+            android:id="@+id/relatedWords"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relatedWordsHeading"
+            tools:text="salut" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/relatedWords"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/explanationHeading"
+            style="@style/TitleStyle"
+            android:text="@string/explanation_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/relatedWords" />
+
+        <TextView
+            android:id="@+id/explanation"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/explanationHeading"
+            tools:text="This is used in formal sense" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/explanation"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/commentsHeading"
+            style="@style/TitleStyle"
+            android:text="@string/comments_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/explanation" />
+
+        <TextView
+            android:id="@+id/comments"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/commentsHeading"
+            tools:text="Random comment" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/comments"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/mnemonicsHeading"
+            style="@style/TitleStyle"
+            android:text="@string/mnemonics_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/comments" />
+
+        <TextView
+            android:id="@+id/mnemonics"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mnemonicsHeading"
+            tools:text="Random Mnemonic" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/mnemonics"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/categoryHeading"
+            style="@style/TitleStyle"
+            android:text="@string/category_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mnemonics" />
+
+        <TextView
+            android:id="@+id/category"
+            style="@style/SubtitleStyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categoryHeading"
+            tools:text="Simple Words" />
+
+        <com.google.android.material.divider.MaterialDivider
+            style="@style/DividerStyle"
+            app:layout_constraintBottom_toBottomOf="@id/category"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-        android:id="@+id/relatedWordsHeading"
-        style="@style/TitleStyle"
-        android:text="@string/related_words_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layoutPronunciation" />
-
-    <TextView
-        android:id="@+id/relatedWords"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/relatedWordsHeading"
-        tools:text="salut" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/relatedWords"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/explanationHeading"
-        style="@style/TitleStyle"
-        android:text="@string/explanation_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/relatedWords" />
-
-    <TextView
-        android:id="@+id/explanation"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/explanationHeading"
-        tools:text="This is used in formal sense" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/explanation"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/mnemonicsHeading"
-        style="@style/TitleStyle"
-        android:text="@string/mnemonics_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/explanation" />
-
-    <TextView
-        android:id="@+id/mnemonics"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mnemonicsHeading"
-        tools:text="Random Mnemonic" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/mnemonics"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/categoryHeading"
-        style="@style/TitleStyle"
-        android:text="@string/category_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mnemonics" />
-
-    <TextView
-        android:id="@+id/category"
-        style="@style/SubtitleStyle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/categoryHeading"
-        tools:text="Simple Words" />
-
-    <com.google.android.material.divider.MaterialDivider
-        style="@style/DividerStyle"
-        app:layout_constraintBottom_toBottomOf="@id/category"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
