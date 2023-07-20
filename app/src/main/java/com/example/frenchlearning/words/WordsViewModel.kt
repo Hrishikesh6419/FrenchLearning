@@ -28,8 +28,10 @@ class WordsViewModel @Inject constructor(
         loadWords()
     }
 
-    fun loadWords() {
-        _isLoading.value = true
+    fun loadWords(isRefresh: Boolean = false) {
+        if (!isRefresh) {
+            _isLoading.value = true
+        }
         viewModelScope.launch(Dispatchers.IO) {
             Log.d("hrishiiii", "loadWords: Words being fetched")
             val wordsList = wordsRepository.fetchWords()

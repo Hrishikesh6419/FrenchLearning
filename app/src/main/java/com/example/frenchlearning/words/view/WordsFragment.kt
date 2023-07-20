@@ -43,7 +43,7 @@ class WordsFragment : Fragment() {
 
     private fun setListeners() {
         binding.swipeRefreshLayout.setOnRefreshListener {
-            viewModel.loadWords()
+            viewModel.loadWords(isRefresh = true)
         }
     }
 
