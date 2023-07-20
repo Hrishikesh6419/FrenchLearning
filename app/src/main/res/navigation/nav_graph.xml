@@ -6,9 +6,13 @@
 
     <fragment
         android:id="@+id/nav_words"
-        android:name="com.example.frenchlearning.words.WordsFragment"
+        android:name="com.example.frenchlearning.words.view.WordsFragment"
         android:label="Words"
-        tools:layout="@layout/fragment_words" />
+        tools:layout="@layout/fragment_words">
+        <action
+            android:id="@+id/action_nav_words_to_wordDetailFragment"
+            app:destination="@id/wordDetailFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_flashcards"
@@ -21,5 +25,15 @@
         android:name="com.example.frenchlearning.BookmarkFragment"
         android:label="Bookmarks"
         tools:layout="@layout/fragment_bookmark" />
+
+    <fragment
+        android:id="@+id/wordDetailFragment"
+        android:name="com.example.frenchlearning.word_detail.view.WordDetailFragment"
+        android:label="Word Details"
+        tools:layout="@layout/fragment_word_detail">
+        <argument
+            android:name="word"
+            app:argType="com.example.frenchlearning.data.Word" />
+    </fragment>
 
 </navigation>
