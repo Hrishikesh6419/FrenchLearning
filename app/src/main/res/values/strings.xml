@@ -25,4 +25,6 @@
     <string name="french_words">French Words</string>
     <string name="flash_cards">Flash Cards</string>
     <string name="bookmarks">Bookmarks</string>
+    <string name="show_pronunciation">Show Pronunciation</string>
+    <string name="hide_pronunciation">Hide Pronunciation</string>
 </resources>

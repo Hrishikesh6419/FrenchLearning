@@ -30,38 +30,56 @@
             app:layout_constraintBottom_toBottomOf="@id/englishWord"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/frenchWordHeading"
-            style="@style/TitleStyle"
-            android:text="@string/french_word_title"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutFrenchWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/englishWord" />
+            app:layout_constraintTop_toBottomOf="@id/englishWord">
 
-        <TextView
-            android:id="@+id/frenchWord"
-            style="@style/SubtitleStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frenchWordHeading"
-            tools:text="Bonjour" />
+            <TextView
+                android:id="@+id/frenchWordHeading"
+                style="@style/TitleStyle"
+                android:drawablePadding="4dp"
+                android:text="@string/french_word_title"
+                app:drawableEndCompat="@drawable/ic_speaker"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.divider.MaterialDivider
-            style="@style/DividerStyle"
-            app:layout_constraintBottom_toBottomOf="@id/frenchWord"
-            app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/frenchWord"
+                style="@style/SubtitleStyle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frenchWordHeading"
+                tools:text="Bonjour" />
+
+            <TextView
+                android:id="@+id/showPronunciation"
+                style="@style/LinkStyle"
+                android:text="@string/show_pronunciation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.divider.MaterialDivider
+                style="@style/DividerStyle"
+                app:layout_constraintBottom_toBottomOf="@id/frenchWord"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layoutPronunciation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frenchWord">
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/layoutFrenchWord">
 
             <TextView
                 android:id="@+id/pronunciationHeading"
                 style="@style/TitleStyle"
                 android:drawablePadding="4dp"
                 android:text="@string/pronunciation_title"
-                app:drawableEndCompat="@drawable/ic_speaker"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

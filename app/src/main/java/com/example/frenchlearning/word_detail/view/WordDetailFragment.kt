@@ -33,20 +33,33 @@ class WordDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeWord()
-        setHeadingPronunciationListener()
+        setPronunciationListener()
+        setShowPronunciationListener()
     }
 
-    private fun setHeadingPronunciationListener() {
+    private fun setPronunciationListener() {
         textToSpeech = TextToSpeech(requireContext()) { status ->
             if (status != TextToSpeech.ERROR) {
                 textToSpeech?.language = Locale.FRENCH
             }
         }
 
-        binding.layoutPronunciation.setOnClickListener {
+        binding.layoutFrenchWord.setOnClickListener {
             val word = viewModel.word.value
             if (word != null) {
                 textToSpeech?.speak(word.frenchWord, TextToSpeech.QUEUE_FLUSH, null, "")
+            }
+        }
+    }
+
+    private fun setShowPronunciationListener() {
+        binding.showPronunciation.setOnClickListener {
+            if (binding.layoutPronunciation.visibility == View.GONE) {
+                binding.layoutPronunciation.visibility = View.VISIBLE
+                binding.showPronunciation.text = resources.getString(R.string.hide_pronunciation)
+            } else {
+                binding.layoutPronunciation.visibility = View.GONE
+                binding.showPronunciation.text = resources.getString(R.string.show_pronunciation)
             }
         }
     }
