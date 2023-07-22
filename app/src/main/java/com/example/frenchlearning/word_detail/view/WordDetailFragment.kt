@@ -5,6 +5,8 @@ import android.speech.tts.TextToSpeech
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
+import android.view.animation.Animation
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -12,7 +14,7 @@ import com.example.frenchlearning.R
 import com.example.frenchlearning.databinding.FragmentWordDetailBinding
 import com.example.frenchlearning.util.CommonUtil
 import com.example.frenchlearning.word_detail.WordDetailViewModel
-import java.util.*
+import java.util.Locale
 
 class WordDetailFragment : Fragment() {
 
@@ -55,10 +57,29 @@ class WordDetailFragment : Fragment() {
     private fun setShowPronunciationListener() {
         binding.showPronunciation.setOnClickListener {
             if (binding.layoutPronunciation.visibility == View.GONE) {
+                // Create a fade-in animation
+                val fadeIn = AlphaAnimation(0f, 1f)
+                fadeIn.duration = 300 // Duration in milliseconds
+
+                binding.layoutPronunciation.startAnimation(fadeIn)
                 binding.layoutPronunciation.visibility = View.VISIBLE
                 binding.showPronunciation.text = resources.getString(R.string.hide_pronunciation)
             } else {
-                binding.layoutPronunciation.visibility = View.GONE
+                // Create a fade-out animation
+                val fadeOut = AlphaAnimation(1f, 0f)
+                fadeOut.duration = 300 // Duration in milliseconds
+
+                fadeOut.setAnimationListener(object : Animation.AnimationListener {
+                    override fun onAnimationStart(animation: Animation) {}
+
+                    override fun onAnimationEnd(animation: Animation) {
+                        binding.layoutPronunciation.visibility = View.GONE
+                    }
+
+                    override fun onAnimationRepeat(animation: Animation) {}
+                })
+
+                binding.layoutPronunciation.startAnimation(fadeOut)
                 binding.showPronunciation.text = resources.getString(R.string.show_pronunciation)
             }
         }
