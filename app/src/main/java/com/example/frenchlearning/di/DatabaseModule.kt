@@ -2,7 +2,7 @@ package com.example.frenchlearning.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.frenchlearning.database.WordsDatabase
+import com.example.frenchlearning.database.ExcelDatabase
 import com.example.frenchlearning.database.dao.WordsDao
 import dagger.Module
 import dagger.Provides
@@ -17,16 +17,16 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(@ApplicationContext context: Context): WordsDatabase {
+    fun provideDatabase(@ApplicationContext context: Context): ExcelDatabase {
         return Room.databaseBuilder(
             context,
-            WordsDatabase::class.java,
+            ExcelDatabase::class.java,
             "words_database"
         ).build()
     }
 
     @Provides
-    fun provideWordsDao(database: WordsDatabase): WordsDao {
+    fun provideWordsDao(database: ExcelDatabase): WordsDao {
         return database.wordsDao()
     }
 }

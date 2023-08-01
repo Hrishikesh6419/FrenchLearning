@@ -19,9 +19,11 @@ import java.util.Locale
 class WordDetailFragment : Fragment() {
 
     private var _binding: FragmentWordDetailBinding? = null
+    private val binding get() = _binding!!
+
     private var textToSpeech: TextToSpeech? = null
 
-    private val binding get() = _binding!!
+
     private val viewModel: WordDetailViewModel by viewModels()
 
     override fun onCreateView(

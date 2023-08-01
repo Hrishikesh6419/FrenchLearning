@@ -34,7 +34,7 @@ class WordsViewModel @Inject constructor(
         }
         viewModelScope.launch(Dispatchers.IO) {
             Log.d("hrishiiii", "loadWords: Words being fetched")
-            val wordsList = wordsRepository.fetchWords()
+            val wordsList = wordsRepository.fetchWordsSheet()
             // The result of wordsRepository.fetchWords() is posted to
             // the _words LiveData object on the main thread using withContext(Dispatchers.Main)
             withContext(Dispatchers.Main) {

@@ -1,6 +1,6 @@
 package com.example.frenchlearning.di
 
-import com.example.frenchlearning.network.WordsApi
+import com.example.frenchlearning.network.ExcelApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,11 +15,11 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideWordsApi(): WordsApi {
+    fun provideExcelApi(): ExcelApi {
         return Retrofit.Builder()
             .baseUrl("https://docs.google.com/spreadsheets/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(WordsApi::class.java)
+            .create(ExcelApi::class.java)
     }
 }

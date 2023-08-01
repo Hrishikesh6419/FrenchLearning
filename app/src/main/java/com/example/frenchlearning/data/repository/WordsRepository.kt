@@ -5,21 +5,21 @@ import com.example.frenchlearning.data.Category
 import com.example.frenchlearning.data.Word
 import com.example.frenchlearning.database.dao.WordsDao
 import com.example.frenchlearning.database.entity.WordEntity
-import com.example.frenchlearning.network.WordsApi
+import com.example.frenchlearning.network.ExcelApi
 import org.apache.commons.csv.CSVFormat
 import org.apache.commons.csv.CSVParser
 import javax.inject.Inject
 
 class WordsRepository @Inject constructor(
-    private val api: WordsApi,
+    private val api: ExcelApi,
     private val wordsDao: WordsDao
 ) {
 
-    suspend fun fetchWords(): List<Word> {
+    suspend fun fetchWordsSheet(): List<Word> {
         try {
             val words = mutableListOf<Word>()
             val wordEntities = mutableListOf<WordEntity>()
-            val response = api.fetchExcelData()
+            val response = api.fetchWordsSheet()
 
             if (response.isSuccessful) {
                 val csvData: String? = response.body()?.string()
