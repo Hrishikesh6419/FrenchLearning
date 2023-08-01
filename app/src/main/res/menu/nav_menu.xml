@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_words"
             android:title="@string/french_words" />
         <item
+            android:id="@+id/nav_statements"
+            android:icon="@drawable/ic_menu_words"
+            android:title="@string/english_statements" />
+        <item
             android:id="@+id/nav_flashcards"
             android:icon="@drawable/ic_menu_words"
             android:title="@string/flash_cards" />

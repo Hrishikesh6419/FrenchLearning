@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/nav_words"
-        android:name="com.example.frenchlearning.words.view.WordsFragment"
+        android:name="com.example.frenchlearning.words.english_words.view.WordsFragment"
         android:label="Words"
         tools:layout="@layout/fragment_words">
         <action
@@ -33,16 +33,21 @@
         tools:layout="@layout/fragment_word_detail">
         <argument
             android:name="word"
-            app:argType="com.example.frenchlearning.data.Word" />
+            app:argType="com.example.frenchlearning.data.model.Word" />
     </fragment>
     <fragment
         android:id="@+id/nav_frenchWords"
-        android:name="com.example.frenchlearning.FrenchWordsFragment"
+        android:name="com.example.frenchlearning.words.french_words.view.FrenchWordsFragment"
         android:label="French Words"
         tools:layout="@layout/fragment_words">
         <action
             android:id="@+id/action_nav_french_words_to_wordDetailFragment"
             app:destination="@id/wordDetailFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/nav_statements"
+        android:name="com.example.frenchlearning.statements.view.StatementsFragment"
+        android:label="StatementsFragment" />
 
 </navigation>

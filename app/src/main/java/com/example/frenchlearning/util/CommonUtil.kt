@@ -2,7 +2,7 @@ package com.example.frenchlearning.util
 
 import androidx.annotation.StringRes
 import com.example.frenchlearning.R
-import com.example.frenchlearning.data.Category
+import com.example.frenchlearning.data.model.Category
 
 object CommonUtil {
 

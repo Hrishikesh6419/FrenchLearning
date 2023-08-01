@@ -8,4 +8,7 @@ interface ExcelApi {
 
     @GET("d/17Hp8XTSaUaOXX3DzHo-iuhS6ZP8-4k6vPB5S1z8oWY0/export?format=csv&id=17Hp8XTSaUaOXX3DzHo-iuhS6ZP8-4k6vPB5S1z8oWY0&gid=0")
     suspend fun fetchWordsSheet(): Response<ResponseBody>
+
+    @GET("d/17Hp8XTSaUaOXX3DzHo-iuhS6ZP8-4k6vPB5S1z8oWY0/export?format=csv&id=17Hp8XTSaUaOXX3DzHo-iuhS6ZP8-4k6vPB5S1z8oWY0&gid=1490891972")
+    suspend fun fetchStatementSheet(): Response<ResponseBody>
 }

@@ -1,4 +1,4 @@
-package com.example.frenchlearning.data
+package com.example.frenchlearning.data.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -14,10 +14,3 @@ data class Word(
     val mnemonics: String?,
     val category: Category
 ) : Parcelable
-
-enum class Category {
-    SIMPLE_WORDS,
-    STATEMENT,
-    ALPHABET,
-    UNKNOWN
-}

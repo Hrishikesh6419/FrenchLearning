@@ -1,4 +1,4 @@
-package com.example.frenchlearning.words.view
+package com.example.frenchlearning.words.english_words.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,8 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.frenchlearning.R
-import com.example.frenchlearning.data.Word
+import com.example.frenchlearning.data.model.Word
 import com.example.frenchlearning.databinding.FragmentWordsBinding
+import com.example.frenchlearning.words.WordsAdapter
 import com.example.frenchlearning.words.WordsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

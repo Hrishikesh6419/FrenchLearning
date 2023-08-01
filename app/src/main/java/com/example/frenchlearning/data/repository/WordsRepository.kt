@@ -1,8 +1,8 @@
 package com.example.frenchlearning.data.repository
 
 import android.util.Log
-import com.example.frenchlearning.data.Category
-import com.example.frenchlearning.data.Word
+import com.example.frenchlearning.data.model.Category
+import com.example.frenchlearning.data.model.Word
 import com.example.frenchlearning.database.dao.WordsDao
 import com.example.frenchlearning.database.entity.WordEntity
 import com.example.frenchlearning.network.ExcelApi

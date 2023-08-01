@@ -3,6 +3,7 @@ package com.example.frenchlearning.di
 import android.content.Context
 import androidx.room.Room
 import com.example.frenchlearning.database.ExcelDatabase
+import com.example.frenchlearning.database.dao.StatementsDao
 import com.example.frenchlearning.database.dao.WordsDao
 import dagger.Module
 import dagger.Provides
@@ -22,11 +23,18 @@ object DatabaseModule {
             context,
             ExcelDatabase::class.java,
             "words_database"
-        ).build()
+        )
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides
     fun provideWordsDao(database: ExcelDatabase): WordsDao {
         return database.wordsDao()
+    }
+
+    @Provides
+    fun provideStatementsDao(database: ExcelDatabase): StatementsDao {
+        return database.statementDao()
     }
 }

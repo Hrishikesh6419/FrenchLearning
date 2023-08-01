@@ -1,11 +1,11 @@
-package com.example.frenchlearning.words.view
+package com.example.frenchlearning.words
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.frenchlearning.data.Word
+import com.example.frenchlearning.data.model.Word
 import com.example.frenchlearning.databinding.ItemWordBinding
 
 class WordsAdapter(private val shouldShowFrench: Boolean, private val onWordClick: (Word) -> Unit, ) :
