@@ -1,5 +1,9 @@
 package com.example.frenchlearning.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Statement(
     val englishStatement: String,
     val frenchStatement: String,
@@ -7,5 +11,5 @@ data class Statement(
     val explanation: String,
     val literalTranslation: String,
     val category: String
-)
+) : Parcelable
 

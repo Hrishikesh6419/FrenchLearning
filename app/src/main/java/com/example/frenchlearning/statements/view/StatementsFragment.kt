@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.frenchlearning.R
 import com.example.frenchlearning.data.model.Statement
@@ -49,10 +50,9 @@ class StatementsFragment : Fragment() {
 
     private fun setAdapter() {
         adapter = StatementsAdapter(shouldShowFrench = false) { statement: Statement ->
-//            val action = WordsFragmentDirections.actionNavWordsToWordDetailFragment(statement)
-//            findNavController().navigate(action)
-            Toast.makeText(context, "Clicked", Toast.LENGTH_LONG)
-                .show()
+            val action =
+                StatementsFragmentDirections.actionNavStatementsToStatementDetailFragment(statement)
+            findNavController().navigate(action)
         }
         binding.viewStatements.adapter = adapter
         binding.viewStatements.layoutManager =

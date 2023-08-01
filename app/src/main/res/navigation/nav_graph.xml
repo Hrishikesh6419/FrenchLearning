@@ -48,6 +48,19 @@
     <fragment
         android:id="@+id/nav_statements"
         android:name="com.example.frenchlearning.statements.view.StatementsFragment"
-        android:label="StatementsFragment" />
+        android:label="Statements">
+        <action
+            android:id="@+id/action_nav_statements_to_statementDetailFragment"
+            app:destination="@id/statementDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statementDetailFragment"
+        android:name="com.example.frenchlearning.statements.details.view.StatementDetailFragment"
+        android:label="Statement Detail">
+        <argument
+            android:name="statement"
+            app:argType="com.example.frenchlearning.data.model.Statement" />
+    </fragment>
 
 </navigation>
