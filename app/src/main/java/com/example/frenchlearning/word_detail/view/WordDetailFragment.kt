@@ -12,7 +12,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.frenchlearning.R
 import com.example.frenchlearning.databinding.FragmentWordDetailBinding
-import com.example.frenchlearning.util.CommonUtil
 import com.example.frenchlearning.word_detail.WordDetailViewModel
 import java.util.Locale
 
@@ -94,8 +93,7 @@ class WordDetailFragment : Fragment() {
             binding.pronunciation.setCustomText(word.pronunciation)
             binding.relatedWords.setCustomText(word.relatedWords)
             binding.explanation.setCustomText(word.explanation)
-            binding.explanation.setCustomText(word.explanation)
-            binding.category.text = resources.getString(CommonUtil.getCategory(word.category))
+            binding.category.setCustomText(word.category)
         }
     }
 

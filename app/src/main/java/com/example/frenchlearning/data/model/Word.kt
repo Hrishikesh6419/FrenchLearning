@@ -10,5 +10,5 @@ data class Word(
     val pronunciation: String,
     val relatedWords: String?,
     val explanation: String?,
-    val category: Category
+    val category: String?
 ) : Parcelable

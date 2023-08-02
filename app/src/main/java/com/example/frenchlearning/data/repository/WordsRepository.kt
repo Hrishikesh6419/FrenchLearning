@@ -1,7 +1,6 @@
 package com.example.frenchlearning.data.repository
 
 import android.util.Log
-import com.example.frenchlearning.data.model.Category
 import com.example.frenchlearning.data.model.Word
 import com.example.frenchlearning.database.dao.WordsDao
 import com.example.frenchlearning.database.entity.WordEntity
@@ -34,20 +33,13 @@ class WordsRepository @Inject constructor(
                         val explanation = i.get("Explanation")
                         val category = i.get("Category")
 
-                        val categoryEnum = when (category) {
-                            "Simple Words" -> Category.SIMPLE_WORDS
-                            "Statement" -> Category.STATEMENT
-                            "Alphabet" -> Category.ALPHABET
-                            else -> Category.UNKNOWN
-                        }
-
                         val word = Word(
                             englishWord,
                             frenchWord,
                             pronunciation,
                             relatedWords,
                             explanation,
-                            categoryEnum
+                            category
                         )
                         words.add(word)
 
@@ -58,7 +50,7 @@ class WordsRepository @Inject constructor(
                             pronunciation = pronunciation,
                             relatedWords = relatedWords,
                             explanation = explanation,
-                            category = categoryEnum.name
+                            category = category
                         )
                         wordEntities.add(wordEntity)
                     }
@@ -86,7 +78,7 @@ class WordsRepository @Inject constructor(
                 pronunciation = wordEntity.pronunciation,
                 relatedWords = wordEntity.relatedWords,
                 explanation = wordEntity.explanation,
-                category = Category.valueOf(wordEntity.category)
+                category = wordEntity.category
             )
         }
 
