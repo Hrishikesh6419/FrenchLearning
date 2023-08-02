@@ -32,8 +32,6 @@ class WordsRepository @Inject constructor(
                         val pronunciation = i.get("Pronunciation")
                         val relatedWords = i.get("Related Words")
                         val explanation = i.get("Explanation")
-                        val comments = i.get("Comments")
-                        val mnemonics = i.get("Mnemonics")
                         val category = i.get("Category")
 
                         val categoryEnum = when (category) {
@@ -49,8 +47,6 @@ class WordsRepository @Inject constructor(
                             pronunciation,
                             relatedWords,
                             explanation,
-                            comments,
-                            mnemonics,
                             categoryEnum
                         )
                         words.add(word)
@@ -62,8 +58,6 @@ class WordsRepository @Inject constructor(
                             pronunciation = pronunciation,
                             relatedWords = relatedWords,
                             explanation = explanation,
-                            comments = comments,
-                            mnemonics = mnemonics,
                             category = categoryEnum.name
                         )
                         wordEntities.add(wordEntity)
@@ -92,8 +86,6 @@ class WordsRepository @Inject constructor(
                 pronunciation = wordEntity.pronunciation,
                 relatedWords = wordEntity.relatedWords,
                 explanation = wordEntity.explanation,
-                comments = wordEntity.comments,
-                mnemonics = wordEntity.mnemonics,
                 category = Category.valueOf(wordEntity.category)
             )
         }

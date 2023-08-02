@@ -136,49 +136,11 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/commentsHeading"
-            style="@style/TitleStyle"
-            android:text="@string/comments_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/explanation" />
-
-        <TextView
-            android:id="@+id/comments"
-            style="@style/SubtitleStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/commentsHeading"
-            tools:text="Random comment" />
-
-        <com.google.android.material.divider.MaterialDivider
-            style="@style/DividerStyle"
-            app:layout_constraintBottom_toBottomOf="@id/comments"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/mnemonicsHeading"
-            style="@style/TitleStyle"
-            android:text="@string/mnemonics_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/comments" />
-
-        <TextView
-            android:id="@+id/mnemonics"
-            style="@style/SubtitleStyle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mnemonicsHeading"
-            tools:text="Random Mnemonic" />
-
-        <com.google.android.material.divider.MaterialDivider
-            style="@style/DividerStyle"
-            app:layout_constraintBottom_toBottomOf="@id/mnemonics"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
             android:id="@+id/categoryHeading"
             style="@style/TitleStyle"
             android:text="@string/category_title"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mnemonics" />
+            app:layout_constraintTop_toBottomOf="@id/explanation" />
 
         <TextView
             android:id="@+id/category"

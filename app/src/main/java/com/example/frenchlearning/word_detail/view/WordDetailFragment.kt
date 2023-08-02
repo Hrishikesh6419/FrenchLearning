@@ -94,9 +94,7 @@ class WordDetailFragment : Fragment() {
             binding.pronunciation.setCustomText(word.pronunciation)
             binding.relatedWords.setCustomText(word.relatedWords)
             binding.explanation.setCustomText(word.explanation)
-            binding.comments.setCustomText(word.comments)
             binding.explanation.setCustomText(word.explanation)
-            binding.mnemonics.setCustomText(word.mnemonics)
             binding.category.text = resources.getString(CommonUtil.getCategory(word.category))
         }
     }

@@ -8,8 +8,6 @@
     <string name="english_word_title">English Word</string>
     <string name="french_word_title">French Word</string>
     <string name="related_words_title">Related Words</string>
-    <string name="comments_title">Comments</string>
-    <string name="mnemonics_title">Mnemonics</string>
     <string name="not_available">Not available</string>
 
     <string name="pronunciation_title">Pronunciation</string>

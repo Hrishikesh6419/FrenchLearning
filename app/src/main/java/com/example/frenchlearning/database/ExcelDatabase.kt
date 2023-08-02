@@ -7,7 +7,7 @@ import com.example.frenchlearning.database.dao.WordsDao
 import com.example.frenchlearning.database.entity.StatementEntity
 import com.example.frenchlearning.database.entity.WordEntity
 
-@Database(entities = [WordEntity::class, StatementEntity::class], version = 2)
+@Database(entities = [WordEntity::class, StatementEntity::class], version = 3)
 abstract class ExcelDatabase : RoomDatabase() {
     abstract fun wordsDao(): WordsDao
     abstract fun statementDao(): StatementsDao
